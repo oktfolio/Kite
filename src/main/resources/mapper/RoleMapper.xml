@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oktfolio.kite.mapper.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.ucenter.Role">
+        <!--@Table xiling_role-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="code" column="code" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, code, name, status, gmt_create, gmt_modified
+    </sql>
+
+    <sql id="Table_Name">
+        `xiling_role`
+    </sql>
+
+    <select id="selectRoleCodeListByRoleCodeListAndStatus" resultMap="BaseResultMap">
+        SELECT code
+        FROM
+        <include refid="Table_Name"/>
+        WHERE
+        `status` = #{status,jdbcType=TINYINT}
+        <choose>
+            <when test="param1 != null and param1.size() != 0">
+                AND
+                `code` IN
+                <foreach collection="param1" open="(" close=")" separator="," item="item">
+                    #{item}
+                </foreach>
+            </when>
+            <when test="param1 == null or param1.size() == 0">
+                AND
+                1 != 1
+            </when>
+        </choose>
+    </select>
+</mapper>

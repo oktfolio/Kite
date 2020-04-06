@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oktfolio.kite.mapper.UserRoleMapper">
+    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.ucenter.UserRole">
+        <!--@Table xiling_user_role-->
+        <result property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="roleCode" column="role_code" jdbcType="VARCHAR"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, username, role_code, gmt_create, gmt_modified
+    </sql>
+
+    <sql id="Table_Name">
+        `xiling_user_role`
+    </sql>
+
+    <select id="selectRoleCodeListByUserId" resultMap="BaseResultMap">
+        SELECT role_code
+        FROM
+        <include refid="Table_Name"/>
+        WHERE
+        user_id = #{userId,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectRoleCodeListByUsername" resultMap="BaseResultMap">
+        SELECT role_code
+        FROM
+        <include refid="Table_Name"/>
+        WHERE
+        user_id = #{userId,jdbcType=BIGINT}
+    </select>
+</mapper>

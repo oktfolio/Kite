@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oktfolio.kite.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.ucenter.User">
+        <!--@Table xiling_user-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, username, email, mobile, password, gmt_create, gmt_modified
+    </sql>
+
+    <sql id="Table_Name">
+        `xiling_user`
+    </sql>
+
+    <select id="selectByUsername" resultType="com.oktfolio.kite.model.ucenter.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table_Name"/>
+        WHERE
+        username = #{username,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByPhone" resultType="com.oktfolio.kite.model.ucenter.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table_Name"/>
+        WHERE
+        mobile = #{mobile,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectByEmail" resultType="com.oktfolio.kite.model.ucenter.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="Table_Name"/>
+        WHERE
+        email = #{email,jdbcType=VARCHAR}
+    </select>
+</mapper>

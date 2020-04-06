@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oktfolio.kite.mapper.RoleAuthorityMapper">
+    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.ucenter.RoleAuthority">
+        <!--@Table xiling_role_authority-->
+        <result property="id" column="id" jdbcType="BIGINT"/>
+        <result property="roleCode" column="role_code" jdbcType="BIGINT"/>
+        <result property="authorityCode" column="authorityCode" jdbcType="VARCHAR"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_id, username, role_code, gmt_create, gmt_modified
+    </sql>
+
+    <sql id="Table_Name">
+        `xiling_role_authority`
+    </sql>
+
+    <select id="selectAuthorityCodeListByRoleCodeList" resultMap="BaseResultMap">
+        SELECT
+        authority_code
+        FROM
+        <include refid="Table_Name"/>
+    </select>
+
+</mapper>
