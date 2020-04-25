@@ -1,17 +1,25 @@
 package com.oktfolio.kite.model.ucenter
 
+import com.baomidou.mybatisplus.annotation.TableName
 import com.oktfolio.kite.model.BaseModel
+import java.time.LocalDateTime
 
 /**
  * @author oktfolio oktfolio@gmail.com
  * @date 2020/03/21
  */
-class Role : BaseModel() {
+@TableName("kite_role")
+class RoleDO : BaseModel() {
 
     private var id: Int? = null
     private var name: String? = null
     private var code: String? = null
+    private var dataScope: Int? = null
+    private var level: Int? = null
     private var status: Int? = null
+    private var remark: Int? = null
+    private var createTime: LocalDateTime? = null
+    private var updateTime: LocalDateTime? = null
 
     fun getId(): Int? {
         return id
@@ -44,4 +52,6 @@ class Role : BaseModel() {
     fun setStatus(status: Int?) {
         this.status = status
     }
+
+
 }

@@ -8,6 +8,7 @@ import java.time.LocalDateTime
  * @date 2020/03/21
  */
 open class BaseModel {
-    private var gmtCreate: LocalDateTime? = null
-    private var gmtModified: LocalDateTime? = null
+    private var id: Long? = null;
+    private var createTime: LocalDateTime? = null
+    private var updateTime: LocalDateTime? = null
 }

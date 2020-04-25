@@ -1,6 +1,6 @@
 package com.oktfolio.kite.service
 
-import com.oktfolio.kite.model.ucenter.User
+import com.oktfolio.kite.model.ucenter.UserDO
 
 
 /**
@@ -8,5 +8,5 @@ import com.oktfolio.kite.model.ucenter.User
  * @date 2020/03/21
  */
 interface UserService {
-    fun insert(user: User)
+    fun insert(userDO: UserDO)
 }

@@ -1,6 +1,5 @@
 package com.oktfolio.kite.common
 
-import com.oktfolio.kite.common.Authority
 import com.oktfolio.kite.common.enums.AuthorityGroupEnum
 
 

@@ -14,13 +14,13 @@ import org.springframework.context.annotation.Configuration
 class SnowFlakeConfig {
 
     @Autowired
-    private lateinit var xiLingSnowFlakeProperties: XiLingSnowFlakeProperties
+    private lateinit var kiteSnowFlakeProperties: KiteSnowFlakeProperties
 
     @Bean
     fun snowFlake(): SnowFlake? {
         val snowFlake = SnowFlake()
-        snowFlake.setDataCenterId(xiLingSnowFlakeProperties.centerId)
-        snowFlake.setMachineId(xiLingSnowFlakeProperties.machineId)
+        snowFlake.setDataCenterId(kiteSnowFlakeProperties.centerId)
+        snowFlake.setMachineId(kiteSnowFlakeProperties.machineId)
         return snowFlake
     }
 }

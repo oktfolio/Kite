@@ -3,7 +3,7 @@ package com.oktfolio.kite.controller.admin
 import com.oktfolio.kite.common.annotation.Log
 import com.oktfolio.kite.common.constant.AuthorityCode
 import com.oktfolio.kite.common.enums.LogTypeEnum
-import com.oktfolio.kite.model.ucenter.User
+import com.oktfolio.kite.model.ucenter.UserDO
 import com.oktfolio.kite.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -25,8 +25,8 @@ class AdminUserController {
     @Log(name = "CREATE_USER", type = LogTypeEnum.CREATE)
     @PreAuthorize(AuthorityCode.AdminUser.HAS_AUTHORITY_CREATE)
     @PostMapping("")
-    fun createUser(@RequestBody user: User): ResponseEntity<Any> {
-        userService.insert(user)
+    fun createUser(@RequestBody userDO: UserDO): ResponseEntity<Any> {
+        userService.insert(userDO)
         return ResponseEntity.ok().build()
     }
 

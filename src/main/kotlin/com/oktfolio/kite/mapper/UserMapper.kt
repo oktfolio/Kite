@@ -1,8 +1,7 @@
 package com.oktfolio.kite.mapper
 
-import com.oktfolio.kite.model.ucenter.User
+import com.oktfolio.kite.model.ucenter.UserDO
 import org.apache.ibatis.annotations.Mapper
-import org.springframework.stereotype.Repository
 
 /**
  * @author oktfolio oktfolio@gmail.com
@@ -10,7 +9,11 @@ import org.springframework.stereotype.Repository
  */
 @Mapper
 interface UserMapper {
-    fun selectByUsername(username: String?): User
-    fun selectByEmail(email: String?): User
-    fun selectByPhone(mobile: String?): User
+
+    fun selectByUsername(username: String?): UserDO
+
+    fun selectByEmail(email: String?): UserDO
+
+    fun selectByPhone(mobile: String?): UserDO
+
 }

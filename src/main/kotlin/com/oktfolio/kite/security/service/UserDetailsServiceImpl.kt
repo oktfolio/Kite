@@ -6,7 +6,7 @@ import com.oktfolio.kite.mapper.RoleAuthorityMapper
 import com.oktfolio.kite.mapper.RoleMapper
 import com.oktfolio.kite.mapper.UserMapper
 import com.oktfolio.kite.mapper.UserRoleMapper
-import com.oktfolio.kite.model.ucenter.User
+import com.oktfolio.kite.model.ucenter.UserDO
 import com.oktfolio.kite.security.model.ExtendedUserDetails
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
@@ -67,8 +67,8 @@ class UserDetailsServiceImpl : ExtendedUserDetailsService {
                 authorityList)
     }
 
-    private fun loadUserRoleAndAuthorityByUserDetails(user: User): List<String> {
-        val roleCodeList = userRoleMapper.selectRoleCodeListByUserId(user.id)
+    private fun loadUserRoleAndAuthorityByUserDetails(userDO: UserDO): List<String> {
+        val roleCodeList = userRoleMapper.selectRoleCodeListByUserId(userDO.id)
         val roleCodeListEnabled = roleMapper.selectRoleCodeListByRoleCodeListAndStatus(roleCodeList,
                 Constants.RoleStatusEnum.ENABLED.value)
         val authorityCodeList = roleAuthorityMapper.selectAuthorityCodeListByRoleCodeList(roleCodeListEnabled)

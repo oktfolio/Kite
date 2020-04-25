@@ -1,5 +1,6 @@
 package com.oktfolio.kite.security.filter
 
+import com.oktfolio.kite.security.handlers.AuthenticationSuccessHandlerImpl
 import com.oktfolio.kite.utils.JsonUtils
 import com.oktfolio.kite.security.model.UsernamePassword
 import org.slf4j.LoggerFactory

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component
  * @date 2020/03/17
  */
 @Component
-@ConfigurationProperties(prefix = "xi-ling.snowflake", ignoreInvalidFields = false, ignoreUnknownFields = true)
-data class XiLingSnowFlakeProperties(
+@ConfigurationProperties(prefix = "kite.snowflake", ignoreInvalidFields = false, ignoreUnknownFields = true)
+data class KiteSnowFlakeProperties(
         var centerId: Long = 0L,
         var machineId: Long = 0L
 )

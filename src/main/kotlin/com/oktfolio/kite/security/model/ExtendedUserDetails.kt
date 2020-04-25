@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails
  * @date 2020/03/15
  */
 class ExtendedUserDetails(
-        var id: Long,
+        private var id: Long,
         private var username: String = "",
         var mobile: String? = "",
         var email: String? = "",

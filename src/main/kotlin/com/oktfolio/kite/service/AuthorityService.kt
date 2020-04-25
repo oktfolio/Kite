@@ -9,6 +9,9 @@ import com.oktfolio.kite.common.AuthorityGroup
  * @date 2020/03/21
  */
 interface AuthorityService {
+
     fun getAuthorityByCode(code: String): Authority
+
     fun getAuthorityGroupGroupBy(): List<AuthorityGroup>
+
 }

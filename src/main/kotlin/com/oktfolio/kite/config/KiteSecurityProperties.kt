@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
  * @date 2020/03/17
  */
 @Component
-@ConfigurationProperties(prefix = "xi-ling.security", ignoreInvalidFields = false, ignoreUnknownFields = true)
-data class XiLingSecurityProperties(
+@ConfigurationProperties(prefix = "kite.security", ignoreInvalidFields = false, ignoreUnknownFields = true)
+data class KiteSecurityProperties(
         val test: List<String>
 )

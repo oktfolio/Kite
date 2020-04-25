@@ -34,7 +34,7 @@ class AccessDeniedHandlerImpl : AccessDeniedHandler {
     override fun handle(httpServletRequest: HttpServletRequest?,
                         httpServletResponse: HttpServletResponse,
                         e: AccessDeniedException) {
-        logger.info(e.message)
+        Companion.logger.info(e.message)
         httpServletResponse.status = HttpStatus.FORBIDDEN.value()
         httpServletResponse.contentType = MediaType.APPLICATION_JSON_VALUE
         httpServletResponse.writer

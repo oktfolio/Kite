@@ -1,6 +1,7 @@
 package com.oktfolio.kite.mapper
 
-import org.apache.ibatis.annotations.Mapper
+import com.baomidou.mybatisplus.core.mapper.BaseMapper
+import com.oktfolio.kite.model.ucenter.RoleDO
 import org.apache.ibatis.annotations.Param
 import org.springframework.stereotype.Repository
 
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Repository
  * @author oktfolio oktfolio@gmail.com
  * @date 2020/03/21
  */
-@Mapper
-interface RoleMapper {
+@Repository
+interface RoleMapper : BaseMapper<RoleDO> {
     fun selectRoleListByRoleCodeAndStatus(@Param("code") code: String,
                                           @Param("status") status: Int)
 
