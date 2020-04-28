@@ -1,6 +1,6 @@
 package com.oktfolio.kite.service
 
-import com.oktfolio.kite.model.ucenter.UserDO
+import com.oktfolio.kite.model.UserDO
 
 
 /**

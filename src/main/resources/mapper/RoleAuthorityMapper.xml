@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oktfolio.kite.mapper.RoleAuthorityMapper">
-    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.ucenter.RoleAuthorityDO">
+    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.RoleAuthorityDO">
         <!--@Table kite_role_authority-->
         <result property="id" column="id" jdbcType="BIGINT"/>
         <result property="roleId" column="role_id" jdbcType="BIGINT"/>

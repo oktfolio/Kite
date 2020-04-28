@@ -23,9 +23,9 @@ enum class UserResultCodeEnum(private val value: Int,
     // username exists
     USERNAME_EXISTS(400010, "username already registered"),
     // email exists
-    EMAIL_EXISTS(400011, "email has bean bound by other user"),
+    EMAIL_EXISTS(400011, "email has been bound by other user"),
     // phone exists
-    PHONE_EXISTS(400012, "phone has bean bound by other user"),
+    PHONE_EXISTS(400012, "phone has been bound by other user"),
     // username or password cannot be null
     USERNAME_PASSWORD_CANNOT_BE_NULL(401010, "username or password cannot be null"),
     // bad username or password

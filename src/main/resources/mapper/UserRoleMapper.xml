@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oktfolio.kite.mapper.UserRoleMapper">
-    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.ucenter.UserRoleDO">
+    <resultMap id="BaseResultMap" type="com.oktfolio.kite.model.UserRoleDO">
         <!--@Table xiling_user_role-->
         <result property="id" column="id" jdbcType="BIGINT"/>
         <result property="userId" column="user_id" jdbcType="BIGINT"/>

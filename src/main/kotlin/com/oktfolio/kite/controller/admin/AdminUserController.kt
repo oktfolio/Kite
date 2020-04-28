@@ -3,7 +3,7 @@ package com.oktfolio.kite.controller.admin
 import com.oktfolio.kite.common.annotation.Log
 import com.oktfolio.kite.common.constant.AuthorityCode
 import com.oktfolio.kite.common.enums.LogTypeEnum
-import com.oktfolio.kite.model.ucenter.UserDO
+import com.oktfolio.kite.model.UserDO
 import com.oktfolio.kite.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity

@@ -6,7 +6,7 @@ import com.oktfolio.kite.mapper.RoleAuthorityMapper
 import com.oktfolio.kite.mapper.RoleMapper
 import com.oktfolio.kite.mapper.UserMapper
 import com.oktfolio.kite.mapper.UserRoleMapper
-import com.oktfolio.kite.model.ucenter.UserDO
+import com.oktfolio.kite.model.UserDO
 import com.oktfolio.kite.security.model.ExtendedUserDetails
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
