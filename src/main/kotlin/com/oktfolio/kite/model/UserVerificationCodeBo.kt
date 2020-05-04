@@ -6,6 +6,5 @@ package com.oktfolio.kite.model
  */
 class UserVerificationCodeBo(var username: String,
                              var email: String,
-                             var phone: String,
-                             var mobile: String) {
+                             var phone: String) {
 }

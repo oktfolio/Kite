@@ -36,7 +36,6 @@ object Constants {
          * 已删除
          */
         DELETED(-1, "已删除");
-
     }
 
     enum class RoleStatusEnum(val value: Int, val desc: String) {
@@ -49,6 +48,11 @@ object Constants {
          * 未启用
          */
         DISABLED(0, "未启用");
+    }
 
+    object VerificationCode{
+        const val PHONE = "verification_code:phone:"
+        const val EMAIL = "verification_code:email:"
+        const val CAPTCHA = "verification_code:image:"
     }
 }

@@ -68,7 +68,7 @@ class UserDetailsServiceImpl : ExtendedUserDetailsService {
     }
 
     private fun loadUserRoleAndAuthorityByUserDetails(userDO: UserDO): List<String> {
-        val roleCodeList = userRoleMapper.selectRoleCodeListByUserId(userDO.id)
+        val roleCodeList = userRoleMapper.selectRoleCodeListByUserId(userDO!!.id!!)
         val roleCodeListEnabled = roleMapper.selectRoleCodeListByRoleCodeListAndStatus(roleCodeList,
                 Constants.RoleStatusEnum.ENABLED.value)
         val authorityCodeList = roleAuthorityMapper.selectAuthorityCodeListByRoleCodeList(roleCodeListEnabled)

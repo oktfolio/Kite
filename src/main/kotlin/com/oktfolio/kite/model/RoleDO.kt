@@ -7,21 +7,12 @@ package com.oktfolio.kite.model
  */
 class RoleDO : BaseModel() {
 
-    private var id: Int? = null
     private var name: String? = null
     private var code: String? = null
     private var dataScope: Int? = null
     private var level: Int? = null
     private var status: Int? = null
     private var remark: Int? = null
-
-    fun getId(): Int? {
-        return id
-    }
-
-    fun setId(id: Int?) {
-        this.id = id
-    }
 
     fun getName(): String? {
         return name
@@ -46,6 +37,4 @@ class RoleDO : BaseModel() {
     fun setStatus(status: Int?) {
         this.status = status
     }
-
-
 }

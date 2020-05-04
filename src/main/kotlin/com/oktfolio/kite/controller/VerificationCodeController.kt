@@ -1,7 +1,9 @@
 package com.oktfolio.kite.controller
 
+import com.oktfolio.kite.common.constant.Constants
 import com.oktfolio.kite.model.UserVerificationCodeBo
 import com.oktfolio.kite.service.UserService
+import org.apache.tomcat.util.bcel.Const
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.redis.core.StringRedisTemplate
 import org.springframework.http.ResponseEntity
@@ -18,10 +20,6 @@ import javax.servlet.http.HttpSession
  */
 class VerificationCodeController {
 
-    private val EMAIL_PREFIX = "verification_code:email:"
-    private val PHONE_PREFIX = "verification_code:phone:"
-    private val CAPTCHA_PREFIX = "verification_code:image:"
-
     @Autowired
     lateinit var userService: UserService
 
@@ -34,7 +32,7 @@ class VerificationCodeController {
         val code = randomStringCode()
         stringRedisTemplate!!
                 .opsForValue()
-                .set(CAPTCHA_PREFIX + sessionId,
+                .set(Constants.VerificationCode.CAPTCHA + sessionId,
                         code,
                         15,
                         TimeUnit.MINUTES)
@@ -49,7 +47,7 @@ class VerificationCodeController {
         if (userDetails != null) {
             stringRedisTemplate!!
                     .opsForValue()
-                    .set(PHONE_PREFIX + phone,
+                    .set(Constants.VerificationCode.PHONE + phone,
                             code,
                             15,
                             TimeUnit.MINUTES)
@@ -65,7 +63,7 @@ class VerificationCodeController {
         if (userDetails != null) {
             stringRedisTemplate!!
                     .opsForValue()
-                    .set(PHONE_PREFIX + phone,
+                    .set(Constants.VerificationCode.PHONE + phone,
                             code,
                             15,
                             TimeUnit.MINUTES)
@@ -81,7 +79,7 @@ class VerificationCodeController {
         if (userDetails != null) {
             stringRedisTemplate!!
                     .opsForValue()
-                    .set(EMAIL_PREFIX + email,
+                    .set(Constants.VerificationCode.EMAIL + email,
                             code,
                             15,
                             TimeUnit.MINUTES)
