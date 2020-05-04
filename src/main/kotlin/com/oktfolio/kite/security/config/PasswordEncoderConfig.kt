@@ -10,10 +10,10 @@ import org.springframework.security.crypto.password.PasswordEncoder
  * @date 2020/03/15
  */
 @Configuration
-open class PasswordEncoderConfig {
+class PasswordEncoderConfig {
 
     @Bean
-    open fun passwordEncoder(): PasswordEncoder? {
+    fun passwordEncoder(): PasswordEncoder? {
         return BCryptPasswordEncoder()
     }
 }

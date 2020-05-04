@@ -15,14 +15,4 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class MainController {
 
-    companion object{
-        private val test= AuthorityEnum.ADMIN_USER_CREATE
-    }
-
-    @RequestMapping("/test")
-    @PreAuthorize("hasAnyAuthority()")
-    private fun test(): ResponseEntity<Any> {
-        println(Gson().toJson(AuthorityPool.getAuthorityGroupList()))
-        return ResponseEntity.ok().build()
-    }
 }

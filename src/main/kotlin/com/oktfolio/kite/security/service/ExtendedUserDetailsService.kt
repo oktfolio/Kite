@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException
 interface ExtendedUserDetailsService : UserDetailsService {
 
     @Throws(UsernameNotFoundException::class)
-    fun loadUserByPhone(phone: String?): UserDetails
+    fun loadUserByPhone(phone: String?): UserDetails?
 
     @Throws(UsernameNotFoundException::class)
-    fun loadUserByEmail(email: String?): UserDetails
+    fun loadUserByEmail(email: String?): UserDetails?
 }

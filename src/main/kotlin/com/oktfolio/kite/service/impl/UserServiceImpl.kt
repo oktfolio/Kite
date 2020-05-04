@@ -18,10 +18,10 @@ class UserServiceImpl : UserService {
     @Autowired
     private lateinit var userMapper: UserMapper
 
-    override fun insert(userDO: UserDO) {
+    override fun insert(userDO: UserDO): Int {
         userDO.setCreateTime(LocalDateTime.now())
         userDO.setUpdateTime(LocalDateTime.now())
-        userMapper.insert(userDO)
+        return userMapper.insert(userDO)
     }
 
     fun listByCondition(pageNum: Int, pageSize: Int) {

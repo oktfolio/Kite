@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletRequest
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-open class WebSecurityConfig : WebSecurityConfigurerAdapter(false) {
+class WebSecurityConfig : WebSecurityConfigurerAdapter(false) {
 
     @Autowired
     private lateinit var userDetailsService: UserDetailsServiceImpl
@@ -43,7 +43,7 @@ open class WebSecurityConfig : WebSecurityConfigurerAdapter(false) {
     private lateinit var passwordEncoder: PasswordEncoder
 
     @Bean
-    open fun daoAuthenticationProvider(): DaoAuthenticationProvider? {
+    fun daoAuthenticationProvider(): DaoAuthenticationProvider? {
         val provider = DaoAuthenticationProvider()
         // passwordEncoder
         provider.setPasswordEncoder(passwordEncoder)
@@ -56,7 +56,7 @@ open class WebSecurityConfig : WebSecurityConfigurerAdapter(false) {
 
     @Bean
     @Throws(java.lang.Exception::class)
-    open fun jsonUsernamePasswordAuthenticationFilter(): JsonUsernamePasswordAuthenticationFilter? {
+    fun jsonUsernamePasswordAuthenticationFilter(): JsonUsernamePasswordAuthenticationFilter? {
         val filter = JsonUsernamePasswordAuthenticationFilter()
         filter.setAuthenticationManager(authenticationManagerBean())
         filter.setFilterProcessesUrl("/login")
